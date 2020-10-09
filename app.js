@@ -5,7 +5,12 @@ var express       	 = require("express");
 	methodOverride	 = require("method-override");
 	expressSanitizer = require("express-sanitizer");
 
-console.log(process.env.DATABASEURL); 
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"
+
+mongoose.connect(url, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
 
 //APP CONFIG
 mongoose.connect("mongodb://localhost:27017/restful_blog_app", {
