@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(expressSanitizer()); 
 
+process.unhandledRejections = 'strict';
+
 // MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
 	title: String,
