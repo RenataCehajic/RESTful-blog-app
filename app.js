@@ -6,10 +6,12 @@ var express       	 = require("express");
 	expressSanitizer = require("express-sanitizer");
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost:27017/restful_blog_app", {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+// mongoose.connect("mongodb://localhost:27017/restful_blog_app", {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true
+// });
+
+mongoose.connect("mongodb+srv:RenataA:Renatarenata@cluster0.yqqfu.mongodb.net/<RESTful Blog App>?retryWrites=true&w=majority"); 
 
 mongoose.set('useFindAndModify', false);
 
@@ -19,7 +21,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(expressSanitizer()); 
 
-process.unhandledRejections = 'strict';
 
 // MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
