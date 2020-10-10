@@ -5,12 +5,13 @@ var express       	 = require("express");
 	methodOverride	 = require("method-override");
 	expressSanitizer = require("express-sanitizer");
 
-// var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"
 
-// mongoose.connect(url, {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true
-// });
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app"
+
+mongoose.connect(url, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
 
 //APP CONFIG
 // mongoose.connect("mongodb://localhost:27017/restful_blog_app", {
@@ -18,14 +19,14 @@ var express       	 = require("express");
 // 	useUnifiedTopology: true
 // });
 
-mongoose.connect("mongodb+srv://RenataA:Renatarenata@cluster0.yqqfu.mongodb.net/RESTful_Blog_App?retryWrites=true&w=majority", {
-	useNewUrlParser: true,
- 	useUnifiedTopology: true
-}).then(() => {
-		console.log("Connected to DB!");
-}).catch(err => {
-	console.log("ERROR", err.message); 
-})
+// mongoose.connect("mongodb+srv://RenataA:Renatarenata@cluster0.yqqfu.mongodb.net/RESTful_Blog_App?retryWrites=true&w=majority", {
+// 	useNewUrlParser: true,
+//  	useUnifiedTopology: true
+// }).then(() => {
+// 		console.log("Connected to DB!");
+// }).catch(err => {
+// 	console.log("ERROR", err.message); 
+// })
 
 
 mongoose.set('useFindAndModify', false);
